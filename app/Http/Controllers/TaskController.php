@@ -57,11 +57,11 @@ class TaskController extends Controller {
 
         $data['item'] = $query->paginate(10);
 
-        return view($this->pathViewController . '.index', $data);
+        return view($this->pathViewController . 'index', $data);
     }
 
     public function create() {
-        return view($this->pathViewController . '.create');
+        return view($this->pathViewController . 'create');
     }
 
     public function store(TaskRequest $request) {
@@ -71,7 +71,7 @@ class TaskController extends Controller {
 
     public function edit($id) {
         $item = $this->taskService->getById($id);
-        return view($this->pathViewController . '.edit', compact('item'));
+        return view($this->pathViewController . 'edit', compact('item'));
     }
 
     public function update(TaskRequest $request, Task $task) {

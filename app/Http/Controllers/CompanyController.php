@@ -19,11 +19,11 @@ class CompanyController extends Controller {
 
     public function index() {
         $item = $this->companyService->getAll();
-        return view($this->pathViewController . '.index', compact('item'));
+        return view($this->pathViewController . 'index', compact('item'));
     }
 
     public function create() {
-        return view($this->pathViewController . '.create');
+        return view($this->pathViewController . 'create');
     }
 
     public function store(CompanyRequest $request) {

@@ -20,12 +20,12 @@ class UserController extends Controller {
     public function index() {
         // $item = $this->userService->getAll();
         $item = User::with('roles')->get();
-        return view($this->pathViewController . '.index', compact('item'));
+        return view($this->pathViewController . 'index', compact('item'));
     }
 
     public function create() {
         $item = Role::all();
-        return view($this->pathViewController . '.create', compact('item'));
+        return view($this->pathViewController . 'create', compact('item'));
     }
 
     public function store(UserRequest $request) {
@@ -41,7 +41,7 @@ class UserController extends Controller {
     public function edit($id) {
         $item = $this->userService->getById($id);
         $roles = Role::all();
-        return view($this->pathViewController . '.edit', compact('item', 'roles'));
+        return view($this->pathViewController . 'edit', compact('item', 'roles'));
     }
 
     public function update(UserRequest $request, $id) {

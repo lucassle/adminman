@@ -20,12 +20,12 @@ class PersonController extends Controller {
     public function index() {
         // $item = $this->personService->getAll();
         $item = Person::with('company')->get();
-        return view($this->pathViewController . '.index', compact('item'));
+        return view($this->pathViewController . 'index', compact('item'));
     }
 
     public function create() {
         $companies = Company::all();
-        return view($this->pathViewController . '.create', compact('companies'));
+        return view($this->pathViewController . 'create', compact('companies'));
     }
 
     public function store(PersonRequest $request) {
@@ -44,7 +44,7 @@ class PersonController extends Controller {
     public function edit($id) {
         $item = $this->personService->getById($id);
         $companies = Company::all();
-        return view($this->pathViewController . '.edit', compact('item', 'companies'));
+        return view($this->pathViewController . 'edit', compact('item', 'companies'));
     }
 
     public function update(PersonRequest $request, $id) {

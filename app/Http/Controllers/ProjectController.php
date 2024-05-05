@@ -21,12 +21,12 @@ class ProjectController extends Controller {
 
     public function index() {
         $item = Project::paginate(10);
-        return view($this->pathViewController . '.index', compact('item'));
+        return view($this->pathViewController . 'index', compact('item'));
     }
 
     public function create() {
         $companies  = Company::all();
-        return view($this->pathViewController . '.create', compact('companies'));
+        return view($this->pathViewController . 'create', compact('companies'));
     }
 
     public function store(ProjectRequest $request) {
@@ -44,7 +44,7 @@ class ProjectController extends Controller {
         $companies  = Company::all();
         $item       = $this->projectService->getById($id);
         $people     = Person::where('company_id', $item->company_id)->get();
-        return view($this->pathViewController . '.edit', compact('item', 'companies', 'people'));
+        return view($this->pathViewController . 'edit', compact('item', 'companies', 'people'));
     }
 
     public function update(ProjectRequest $request, $id) {

@@ -20,12 +20,12 @@ class DepartmentController extends Controller {
     public function index() {
         // $item = $this->departmentService->getAll();
         $item = Department::with('company')->get();
-        return view($this->pathViewController . '.index', compact('item'));
+        return view($this->pathViewController . 'index', compact('item'));
     }
 
     public function create() {
         $companies = Company::all();
-        return view($this->pathViewController . '.create', compact('companies'));
+        return view($this->pathViewController . 'create', compact('companies'));
     }
 
     public function store(DepartmentRequest $request) {
@@ -41,7 +41,7 @@ class DepartmentController extends Controller {
 
     public function edit($id) {
         $item = $this->departmentService->getById($id);
-        return view($this->pathViewController . '.edit', compact('item'));
+        return view($this->pathViewController . 'edit', compact('item'));
     }
 
     public function update(DepartmentRequest $request, $id) {

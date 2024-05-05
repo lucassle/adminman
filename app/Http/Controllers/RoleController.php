@@ -18,11 +18,11 @@ class RoleController extends Controller {
 
     public function index() {
         $item = $this->roleService->getAll();
-        return view($this->pathViewController . '.index', compact('item'));
+        return view($this->pathViewController . 'index', compact('item'));
     }
 
     public function create() {
-        return view($this->pathViewController . '.create');
+        return view($this->pathViewController . 'create');
     }
 
     public function store(RoleRequest $request) {
@@ -36,7 +36,7 @@ class RoleController extends Controller {
 
     public function edit($id) {
         $item = $this->roleService->getById($id);
-        return view($this->pathViewController . '.edit', compact('item'));
+        return view($this->pathViewController . 'edit', compact('item'));
     }
 
     public function update(RoleRequest $request, $id) {
