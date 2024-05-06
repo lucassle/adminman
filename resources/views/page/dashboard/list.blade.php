@@ -1,34 +1,11 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($item as $key => $item)
-            <tr>
-                @php
-                    $number = $key + 1;
-                @endphp
-                <td>{{ $number }}</td>
-                <td>{{ $item->code }}</td>
-                <td>{{ $item->name }}</td>
-                <td>{{ $item->description }}</td>
-                <td>
-                    <div style="display:flex;">
-                        <a href="{{ route($controllerName . '.edit', $item->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                        <form action="{{ route($controllerName . '.destroy', $item->id) }}" method="POST" class="d-inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
-                        </form>
-                    </div>
-                </td>
-            </tr>
-        @endforeach
-    </tbody>
-</table>
+<div class="col-md-3 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+            <h3></strong>{{ $name }}</strong></h3>
+            <a href='{{ route("$route.index") }}' rel="">Xem chi tiết</a>
+        </div>
+        <div class="icon" style="font-size:60px">
+            <i class="fa {{ $icon }}"></i>
+        </div>
+    </div>
+</div>

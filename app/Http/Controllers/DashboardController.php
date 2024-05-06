@@ -15,6 +15,6 @@ class DashboardController extends Controller {
     }
 
     public function index () {
-        return redirect()->route($this->pathViewController, 'index');
+        return view($this->pathViewController . 'index');
     }
 }

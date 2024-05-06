@@ -12,7 +12,7 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\DashboardController;
 
 // Dashboard
-Route::get('', DashboardController::class);
+Route::resource('', DashboardController::class);
 
 // Country
 Route::resource('country', CountryController::class);

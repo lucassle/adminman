@@ -5,6 +5,7 @@
         <div class="menu_section">
             <h3>General</h3>
             <ul class="nav side-menu">
+                <li><a href="{{ route('index') }}"><i class="fa fa-table-columns"></i> Dashboard</a></li>
                 <li><a href="{{ route('country.index') }}"><i class="fa fa-globe"></i> Country</a></li>
                 <li><a href="{{ route('person.index') }}"><i class="fa fa-person"></i> Person</a></li>
                 <li><a href="{{ route('user.index') }}"><i class="fa fa-user"></i> User</a></li>
