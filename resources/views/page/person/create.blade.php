@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
-            @include('templates.x_title', ['title' => 'Form'])
+            @include('templates.title', ['title' => 'Form'])
             <div class="x_content">
                 <br/>
                 @include('templates.error')

@@ -3,39 +3,12 @@
         <label for="company">Company:</label>
         <select name="company" id="company" class="form-control">
             <option value="">-- Select Company --</option>
-            {{-- @foreach($data['item'] as $company)
+            @foreach($companies as $company)
                 <option value="{{ $company->id }}">{{ $company->name }}</option>
-            @endforeach --}}
-        </select>
-    </div>
-    {{-- <div class="form-group col-md-6 col-xs-12">
-        <label for="project">Project:</label>
-        <select name="project" id="project" class="form-control">
-            <option value="">-- Select Project --</option>
-            @foreach($projects as $project)
-                <option value="{{ $project->id }}">{{ $project->code }}</option>
             @endforeach
         </select>
     </div>
-    <div class="form-group col-md-6 col-xs-12">
-        <label for="project">Person:</label>
-        <select name="project" id="project" class="form-control">
-            <option value="">-- Select Person --</option>
-            @foreach($people as $person)
-                <option value="{{ $person->id }}">{{ $person->full_name }}</option>
-            @endforeach
-        </select>
-    </div>
-    <div class="form-group col-md-6 col-xs-12">
-        <label for="project">Status:</label>
-        <select name="project" id="project" class="form-control">
-            <option value="">-- Select Status --</option>
-            @foreach($people as $person)
-                <option value="{{ $person->id }}">{{ $person->full_name }}</option>
-            @endforeach
-        </select>
-    </div> --}}
-    <!-- Thêm các trường lọc khác tương tự cho Project, Person, Status, priority -->
+
 
     <div class="form-group">
         <label for="search">Search:</label>

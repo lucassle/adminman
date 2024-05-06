@@ -21,13 +21,13 @@ class TaskController extends Controller {
     }
 
     public function index(Request $request) {
-        $query = Task::query();
+        $data = [];
 
         $data['companies'] = Company::all();
         $data['projects'] = Project::all();
-        $data['persons'] = Person::all();
+        $data['people'] = Person::all();
 
-        $data = [];
+        $query = Task::query();
 
         if ($request->filled('company')) {
             $query->whereHas('project', function ($query) use ($request) {
@@ -51,12 +51,9 @@ class TaskController extends Controller {
             $query->where('priority', $request->priority);
         }
 
-        if ($request->filled('search')) {
-            $query->where('name', 'like', '%' . $request->search . '%');
-        }
+        $data['tasks'] = $query->paginate(10);
 
-        $data['item'] = $query->paginate(10);
-
+        // Trả về view với dữ liệu đã lọc
         return view($this->pathViewController . 'index', $data);
     }
 

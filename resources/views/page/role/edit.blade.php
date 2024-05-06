@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
-            @include('templates.x_title', ['title' => 'Edit'])
+            @include('templates.title', ['title' => 'Edit'])
             <div class="x_content">
                 <br/>
                 <form action="{{ route($controllerName . '.update', $item->id) }}" method="post">
