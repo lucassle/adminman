@@ -1,4 +1,7 @@
-<div class="left_col scroll-view nav_title">
+<div class="left_col scroll-view">
+    <div class="navbar nav_title" style="border: 0;">
+        <a href="{{ route('index') }}" class="site_title"><i class="fa fa-paw"></i><span> Admin Site </span></a>
+    </div>
     <div class="clearfix"></div>
     <br/>
     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
