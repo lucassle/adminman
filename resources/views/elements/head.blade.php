@@ -17,8 +17,8 @@
 <link href="{{ asset('asset/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
 <!-- Tags Input -->
 <link href="{{ asset('asset/tagsinput/dist/jquery.tagsinput.min.css') }}" rel="stylesheet">
-<!-- Multiple Select -->
-{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/css/multi-select-tag.css"> --}}
+<!-- Tags Input -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
 <!-- Custom Theme Style -->
 <link href="{{ asset('css/custom.min.css') }}" rel="stylesheet">
 <!-- Custom Theme Style -->

@@ -133,6 +133,25 @@ $(document).ready(function() {
         $('#description').addTag(tags.join(','));
     });
 
+	$('#birthday').datepicker({
+		format: 'yyyy-mm-dd',
+		autoclose: true,
+		todayHighlight: true
+	});
+
+	$('#start_time').datepicker({
+		format: 'yyyy-mm-dd',
+		autoclose: true,
+		todayHighlight: true
+	});
+
+	$('#end_time').datepicker({
+		format: 'yyyy-mm-dd',
+		autoclose: true,
+		todayHighlight: true
+	});
+	
+
 
 	//Init datepicker
 	// $('.datepicker').datepicker({

@@ -23,16 +23,16 @@ class TaskController extends Controller {
     public function index(Request $request) {
         $data = [];
 
-        $data['companies'] = Company::all();
-        $data['projects'] = Project::all();
-        $data['people'] = Person::all();
+        // $data['item']       = $this->taskService->getAll();
+        $data['item']       = Task::with('company', 'project', 'person')->get();
+        $data['companies']  = Company::all();
+        $data['projects']   = Project::all();
+        $data['people']     = Person::all();
 
         $query = Task::query();
 
         if ($request->filled('company')) {
-            $query->whereHas('project', function ($query) use ($request) {
-                $query->where('company_id', $request->company);
-            });
+            $query->where('company_id', $request->company);
         }
 
         if ($request->filled('project')) {
@@ -51,6 +51,10 @@ class TaskController extends Controller {
             $query->where('priority', $request->priority);
         }
 
+        if ($request->filled('search')) {
+            $query->where('name', 'like', '%' . $request->search . '%');
+        }
+
         $data['tasks'] = $query->paginate(10);
 
         // Trả về view với dữ liệu đã lọc
@@ -58,7 +62,10 @@ class TaskController extends Controller {
     }
 
     public function create() {
-        return view($this->pathViewController . 'create');
+        $companies  = Company::all();
+        $projects   = Project::all();
+        $people     = Person::all();
+        return view($this->pathViewController . 'create', compact('companies', 'projects', 'people'));
     }
 
     public function store(TaskRequest $request) {

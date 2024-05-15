@@ -24,7 +24,7 @@
                     </div>
                     <div class="form-group">
                         <label for="birthday">Birthday</label>
-                        <input type="text" name="birthday" id="birthday" class="form-control" placeholder="YYYY-MM-DD. ex: 2000-02-29" value="" required>
+                        <input type="date" name="birthday" id="birthday" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="phone_number">Phone Number</label>

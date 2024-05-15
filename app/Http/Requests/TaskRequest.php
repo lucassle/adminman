@@ -20,13 +20,13 @@ class TaskRequest extends FormRequest {
     public function rules() {
         return [
             'project_id'    => 'required|exists:projects,id',
-            'person_id'     => 'required|exists:persons,id',
+            'person_id'     => 'required|exists:people,id',
             'start_time'    => 'required|date',
             'end_time'      => 'required|date|after_or_equal:start_time',
-            'priority'      => 'required|integer|between:1,3',
+            'priority'      => 'nullable|integer|between:1,3',
             'name'          => 'required|string|max:255',
             'description'   => 'nullable|string',
-            'status'        => 'required|integer|between:1,4',
+            'status'        => 'nullable|integer|between:1,4',
         ];
     }
 }

@@ -16,8 +16,8 @@
 <script src="{{ asset('js/notifyjs/notify.min.js') }}"></script>
 <!-- Sweet Alert 2 -->
 <script src="{{ asset('js/sweetalert2.js') }}"></script>
-<!-- Multiple Select -->
-<script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/js/multi-select-tag.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 <!-- Tags Input -->
 <script src="{{ asset('asset/tagsinput/dist/jquery.tagsinput.min.js') }}"></script>
 <!-- Flatpickr -->

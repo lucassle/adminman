@@ -34,7 +34,7 @@ Route::resource('department', DepartmentController::class);
 
 // Project
 Route::resource('project', ProjectController::class);
-Route::get('/companies/{company}/persons', [ProjectController::class, 'getPersonsByCompany']);
+Route::get('/companies/{company}/person', [ProjectController::class, 'getPersonsByCompany']);
 
 // Task
 Route::resource('task', TaskController::class);
