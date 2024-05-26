@@ -9,6 +9,8 @@ use App\Models\Project;
 use App\Models\Person;
 use App\Http\Requests\TaskRequest;
 use App\Services\TaskService;
+use App\Exports\TaskExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TaskController extends Controller {
     private $pathViewController     = 'page.task.';
@@ -87,5 +89,9 @@ class TaskController extends Controller {
     public function destroy($id) {
         $this->taskService->delete($id);
         return redirect()->route($this->controllerName . '.index')->with('success_notify', 'Successfully deleted!!');
+    }
+
+    public function export()  {
+        return Excel::download(new TaskExport, 'task.xlsx');
     }
 }

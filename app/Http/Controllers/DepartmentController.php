@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\Department;
 use App\Models\Company;
 use App\Http\Requests\DepartmentRequest;
@@ -18,7 +19,6 @@ class DepartmentController extends Controller {
     }
 
     public function index() {
-        // $item = $this->departmentService->getAll();
         $item = Department::with('company')->get();
         return view($this->pathViewController . 'index', compact('item'));
     }
@@ -59,4 +59,15 @@ class DepartmentController extends Controller {
         $this->departmentService->delete($id);
         return redirect()->route($this->controllerName . '.index')->with('success_notify', 'Successfully deleted!!');
     }
+
+    public function bulkAction(Request $request) {
+        $departmentIds = $request->input('departments');
+        
+        if ($departmentIds) {
+            Department::whereIn('id', $departmentIds)->delete();
+        }
+
+        return redirect()->route('departments.index')->with('success_notify', 'Selected departments have been processed.');
+    }
+
 }

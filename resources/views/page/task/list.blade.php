@@ -61,10 +61,15 @@
         <label for="search">Search:</label>
         <input type="text" name="search" id="search" class="form-control" placeholder="Enter task name">
     </div>
-    
-    <button type="submit" class="btn btn-primary">Search</button>
+    <button type="submit" class="btn btn-primary" style="float:right;">Search</button>
 </form>
-
+<div class="form-group" style="display:flex;float:right;">
+    <form action="{{ route($controllerName . '.export') }}" method="POST">
+        @csrf
+        @method('POST')
+        <button type="submit" class="btn btn-sm btn-primary">Export Excel</button>
+    </form>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -98,8 +103,8 @@
                     <p><strong>Start Time: </strong>{{ $item->start_time }}</p>
                     <p><strong>End Time: </strong>{{ $item->end_time }}</p>
                 </td>
-                <td>{{ $item->status }}</td>
-                <td>{{ $item->priority }}</td>
+                <td>{{ $statusValue[$item->status] }}</td>
+                <td>{{ $priorityValue[$item->priority] }}</td>
                 <td>
                     <div style="display:flex;">
                         <a href="{{ route($controllerName . '.edit', $item->id) }}" class="btn btn-sm btn-primary">Edit</a>

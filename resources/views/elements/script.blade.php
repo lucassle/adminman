@@ -22,6 +22,8 @@
 <script src="{{ asset('asset/tagsinput/dist/jquery.tagsinput.min.js') }}"></script>
 <!-- Flatpickr -->
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<!-- jstree -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
 <!-- Custom Theme Scripts -->
 <script src="{{ asset('js/custom.min.js') }}"></script>
 <script src="{{ asset('js/my-js.js') }}"></script>

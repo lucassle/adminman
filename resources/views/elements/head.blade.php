@@ -23,3 +23,5 @@
 <link href="{{ asset('css/custom.min.css') }}" rel="stylesheet">
 <!-- Custom Theme Style -->
 <link href="{{ asset('css/mycss.css') }}" rel="stylesheet">
+<!-- jstree -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css" />

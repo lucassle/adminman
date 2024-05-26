@@ -31,6 +31,7 @@ Route::resource('role', RoleController::class);
 
 // Department
 Route::resource('department', DepartmentController::class);
+Route::post('/departments/bulk-action', [DepartmentController::class, 'bulkAction'])->name('departments.bulkAction');
 
 // Project
 Route::resource('project', ProjectController::class);
@@ -38,5 +39,4 @@ Route::get('/companies/{company}/person', [ProjectController::class, 'getPersons
 
 // Task
 Route::resource('task', TaskController::class);
-
-
+Route::post('task/export/', [TaskController::class, 'export'])->name('task.export');

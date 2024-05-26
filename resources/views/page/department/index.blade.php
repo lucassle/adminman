@@ -9,4 +9,12 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    document.getElementById('select-all').onclick = function() {
+        var checkboxes = document.getElementsByName('departments[]');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    }
+</script>
 @endsection
